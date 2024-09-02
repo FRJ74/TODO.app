@@ -20,6 +20,27 @@ including title, due date, and description.
 const taskData = [];
 let currentTask = {};
 
-openTaskFormBtn.addEventListener("click", function () {
+/* Opening and closing the modal */
+
+openTaskFormBtn.addEventListener("click", () => {
     taskForm.classList.toggle("hidden");
+  });
+
+closeTaskFormBtn.addEventListener("click", () => {
+    confirmCloseDialog.showModal()
+   });
+
+cancelBtn.addEventListener("click", () => {
+    confirmCloseDialog.close();
+  });
+
+discardBtn.addEventListener("click", () => {
+    confirmCloseDialog.close()
+    taskForm.classList.toggle("hidden")
+  });
+
+  /* Get the values from the input fields, save them into the taskData array, and display them on the page. */
+  
+  taskForm.addEventListener("submit", (e) => {
+    e.preventDefault()
   });
