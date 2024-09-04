@@ -39,8 +39,16 @@ discardBtn.addEventListener("click", () => {
     taskForm.classList.toggle("hidden")
   });
 
-  /* Get the values from the input fields, save them into the taskData array, and display them on the page. */
+  /* Get the values from the input fields; save them into the taskData array, and display them on the page. */
   
   taskForm.addEventListener("submit", (e) => {
-    e.preventDefault()
-  });
+    e.preventDefault();
+    const dataArrIndex = taskData.findIndex((item)  => 
+      item.id === currentTask.id); 
+     const taskObj = {
+     id: `${titleInput.value.toLowerCase().split(" ").join("-")}-${Date.now()}`
+     };
+     if (dataArrIndex === -1) {
+      taskData.unshift(taskObj);
+    };     
+   });
