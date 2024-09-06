@@ -46,7 +46,7 @@ cancelBtn.addEventListener("click", () => {
 
 discardBtn.addEventListener("click", () => {
     confirmCloseDialog.close()
-    taskForm.classList.toggle("hidden")
+    reset();
   });
 
   /* Get the values from the input fields; save them into the taskData array, and display them on the page. */
@@ -74,7 +74,7 @@ discardBtn.addEventListener("click", () => {
     }
   );
 
-  taskForm.classList.toggle("hidden");
+  reset();
     
    });
 
