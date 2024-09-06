@@ -20,6 +20,16 @@ including title, due date, and description.
 const taskData = [];
 let currentTask = {};
 
+/* Create a function that handles clearing the input fields. */
+
+const reset = () => {
+  titleInput.value = "";
+  dateInput.value = "";
+  descriptionInput.value ="";
+  taskForm.classList.toggle("hidden");
+  currentTask = {};
+};
+
 /* Opening and closing the modal */
 
 openTaskFormBtn.addEventListener("click", () => {
