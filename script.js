@@ -60,6 +60,16 @@ const updateTaskContainer = () => {
     taskData.splice(dataArrIndex, 1);
  };
 
+ const editTask = (buttonEl) => {
+  const dataArrIndex = taskData.findIndex(
+    (item) => item.id === buttonEl.parentElement.id);
+    currentTask = taskData[dataArrIndex];
+    currentTask.value = taskData[dataArrIndex];
+    titleInput.value = currentTask.title;
+    dateInput.value = currentTask.date;
+    descriptionInput.value = currentTask.description;  
+ };
+
 
 /* Create a function that handles clearing the input fields. */
 
