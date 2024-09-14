@@ -53,6 +53,14 @@ const updateTaskContainer = () => {
    ); 
  };
 
+ const deleteTask = (buttonEl) => {
+  const dataArrIndex = taskData.findIndex((item) => 
+    item.id === buttonEl.parentElement.id);
+    buttonEl.parentElement.remove();
+    taskData.splice(dataArrIndex, 1);
+ };
+
+
 /* Create a function that handles clearing the input fields. */
 
 const reset = () => {
