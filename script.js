@@ -32,6 +32,8 @@ const addOrUpdateTask = () => {
    if (dataArrIndex === -1) {
     taskData.unshift(taskObj);
   }
+  updateTaskContainer();
+  reset();
 };
 
 const updateTaskContainer = () => {
@@ -90,7 +92,7 @@ discardBtn.addEventListener("click", () => {
   taskForm.addEventListener("submit", (e) => {
     e.preventDefault(); 
 
-  reset();
+    addOrUpdateTask();
     
    });
 
