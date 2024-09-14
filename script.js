@@ -37,6 +37,7 @@ const addOrUpdateTask = () => {
 };
 
 const updateTaskContainer = () => {
+  tasksContainer.innerHTML =  "" ;
   taskData.forEach(
      ({ id, title, date, description }) => {
          tasksContainer.innerHTML += `
@@ -44,8 +45,8 @@ const updateTaskContainer = () => {
            <p><strong>Title:</strong> ${title}</p>
            <p><strong>Date:</strong> ${date}</p>
            <p><strong>Description:</strong> ${description}</p>
-           <button type="button" class="btn">Edit</button>
-           <button type="button" class="btn">Delete</button>
+           <button onclick ="editTask(this)" type="button" class="btn">Edit</button>
+           <button onclick ="deleteTask(this)" type="button" class="btn">Delete</button>
          </div>
        `
      }
