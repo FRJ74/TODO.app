@@ -130,6 +130,19 @@ discardBtn.addEventListener("click", () => {
     { task: "Watch football", date: "10-08-2021" },
   ];
   
-  localStorage.setItem("data", myTaskArr);
+/* Set storage */
+
+  localStorage.setItem("data", JSON.stringify(myTaskArr));
+
+  const getTaskArr =  localStorage.getItem("data");
+
+  console.log(getTaskArr);
+
+  const getTaskArrObj = JSON.parse(localStorage.getItem('data'));
+  console.log(getTaskArrObj);
+
+  /* Remove item from storage */
+
+  localStorage.clear();
 
    
