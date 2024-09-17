@@ -84,6 +84,7 @@ const updateTaskContainer = () => {
 /* Create a function that handles clearing the input fields. */
 
 const reset = () => {
+  addOrUpdateTaskBtn.innerText = "Add Task";
   titleInput.value = "";
   dateInput.value = "";
   descriptionInput.value ="";
