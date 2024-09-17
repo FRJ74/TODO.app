@@ -17,7 +17,7 @@ store all the tasks along with their associated data,
 including title, due date, and description.
 */
 
-const taskData = [];
+const taskData = JSON.parse(localStorage.getItem("data")) || [];
 let currentTask = {};
 
 const addOrUpdateTask = () => {
@@ -34,6 +34,8 @@ const addOrUpdateTask = () => {
   } else {
     taskData[dataArrIndex] = taskObj;
   }
+
+  localStorage.setItem("data", JSON.stringify(taskData));
 
   updateTaskContainer();
   reset();
@@ -61,6 +63,8 @@ const updateTaskContainer = () => {
     item.id === buttonEl.parentElement.id);
     buttonEl.parentElement.remove();
     taskData.splice(dataArrIndex, 1);
+
+    localStorage.setItem("data", JSON.stringify(taskData));
  };
 
  const editTask = (buttonEl) => {
@@ -124,25 +128,6 @@ discardBtn.addEventListener("click", () => {
     
    });
 
-   const myTaskArr = [
-    { task: "Walk the Dog", date: "22-04-2022" },
-    { task: "Read some books", date: "02-11-2023" },
-    { task: "Watch football", date: "10-08-2021" },
-  ];
-  
-/* Set storage */
-
-  localStorage.setItem("data", JSON.stringify(myTaskArr));
-
-  const getTaskArr =  localStorage.getItem("data");
-
-  console.log(getTaskArr);
-
-  const getTaskArrObj = JSON.parse(localStorage.getItem('data'));
-  console.log(getTaskArrObj);
-
-  /* Remove item from storage */
-
-  localStorage.clear();
+   
 
    
