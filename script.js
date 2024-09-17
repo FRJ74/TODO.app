@@ -91,6 +91,10 @@ const reset = () => {
   currentTask = {};
 };
 
+if (taskData.length) {
+  updateTaskContainer();
+}
+
 /* Opening and closing the modal */
 
 openTaskFormBtn.addEventListener("click", () => {
